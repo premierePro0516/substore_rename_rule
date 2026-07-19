@@ -203,22 +203,7 @@ function operator(pro) {
 
   // Major changes by Gemini
   pro.forEach((e) => {
-    // 保存最原始的节点名字，防止后面被 replace 搞丢流量数值
-    let originalWholeName = e.name; 
     let bktf = false, ens = e.name
-
-    // 🌟 【新增流量特赦拦截】如果是信息节点，保留全称并加机场名，随后直接跳过地区改名
-    if (/套餐到期|剩余流量/i.test(originalWholeName)) {
-      // 保持原始长名字（含数值），只在前面加上机场名和分隔符
-      e.name = FNAME + FGF + originalWholeName;
-      
-      // 处理一下 quic 逻辑（保持和原脚本一致）
-      if (blockquic == "on") { e["block-quic"] = "on"; } 
-      else if (blockquic == "off") { e["block-quic"] = "off"; } 
-      else { delete e["block-quic"]; }
-      
-      return; // ✨ 核心：直接结束当前节点的循环，后面的地区改名和置空逻辑全部休想碰它！
-    }
 
     // ==========================================
     // 以下是原作者的逻辑（仅对普通地区节点生效）
