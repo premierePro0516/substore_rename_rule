@@ -36,7 +36,8 @@ const nx     = boolArg(inArg.nx, false),
       debug  = boolArg(inArg.debug, false),
 
       // ✅ 默认开启清理信息节点
-      clear  = boolArg(inArg.clear, true),
+      // disabled by Jeff
+      clear  = boolArg(inArg.clear, false),
 
       addflag= boolArg(inArg.flag, false),
       nm     = boolArg(inArg.nm, false);
