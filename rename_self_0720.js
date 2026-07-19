@@ -208,7 +208,7 @@ function operator(pro) {
     let bktf = false, ens = e.name
 
     // 🌟 【新增流量特赦拦截】如果是信息节点，保留全称并加机场名，随后直接跳过地区改名
-    if (/套餐|剩余|到期|流量/i.test(originalWholeName)) {
+    if (/套餐到期|剩余流量/i.test(originalWholeName)) {
       // 保持原始长名字（含数值），只在前面加上机场名和分隔符
       e.name = FNAME + FGF + originalWholeName;
       
